@@ -1,0 +1,23 @@
+command: [
+  "streamlit", 
+  "run",
+  "app.py"
+]
+
+env:
+  - name: STREAMLIT_BROWSER_GATHER_USAGE_STATS
+    value: "false"
+  - name: "SERVING_ENDPOINT"
+    value: "databricks-meta-llama-3-1-8b-instruct"
+  - name: DBSQL_HOST
+    value: "....cloud.databricks.com"
+  - name: DBSQL_HTTP_PATH
+    value: "/sql/1.0/warehouses/..."
+  - name: DBSQL_TOKEN
+    value: "..."
+  - name: DBSQL_CATALOG
+    value: "workspace"
+  - name: DBSQL_SCHEMA
+    value: "ecommerce"
+  - name: DBSQL_WAREHOUSE_ID
+    value: "..."
