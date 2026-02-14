@@ -1,9 +1,9 @@
 # Training final project for Epam Systems's Generative AI Foundations for Data Analytics Engineers course
-Author: Geza Bankovics on January 13, 2026 using DIAL GPT-5.1, GitHub Copilot GPT-5.2 and this Databricks app template: [streamlit-chatbot-app](https://github.com/databricks/app-templates/tree/main/streamlit-chatbot-app)
+Author: Joachim Geza Bankovics on January 13, 2026 using DIAL GPT-5.1, GitHub Copilot GPT-5.2 and this Databricks app template: [streamlit-chatbot-app](https://github.com/databricks/app-templates/tree/main/streamlit-chatbot-app)
 
 # Practical API Scripts
-    - Serving endpoint used: databricks-meta-llama-3-1-8b-instruct
-    - Script (app.py):
+- Serving endpoint used: databricks-meta-llama-3-1-8b-instruct
+- Script (app.py):
 
 `    if prompt := st.chat_input("Ask a question about your data"):
         st.session_state.messages.append({"role": "user", "content": prompt})
@@ -23,7 +23,7 @@ Author: Geza Bankovics on January 13, 2026 using DIAL GPT-5.1, GitHub Copilot GP
             assistant_content = assistant_msg.get("content") or ""
             st.markdown(assistant_content)`
 
-    - Script (model_serving_utils.py):
+- Script (model_serving_utils.py):
 
 `def _query_endpoint(
     endpoint_name: str,
@@ -143,13 +143,13 @@ def query_endpoint(
     raise Exception("Exceeded max_tool_rounds without reaching a final assistant response.")`
 
 # Platform-Specific AI Integrations
-    - I’ve populated a trial Databricks catalog with a small data warehouse called “ecommerce”
-        - Generated some random dummy data INSERT INTO statements using DIAL GPT-5.1
-        - Added Databricks AI-generated descriptions to the schema’s tables to make AI-generated SQL queries work smoother
-    - Added the data warehouse to the chatbot app’s environment variables
-    - Generated Python function code using DIAL GPT-5.1 and GitHub Copilot GPT-5.2 to see if the user’s prompt requires a SQL query and in case yes, to use a function call tool without prompting the LLM twice. Then the same LLM should incorporate query results in its generated answer (see below)
-    - Free trial foundation models like meta-llama-3-1-8b-instruct seem limited in their ability to explain their reasoning. Prompting it to share the SQL query it employed didn’t actually succeed in incorporating the query code into its answers (see screenshots)
-    - The chatbot demonstrates flexibility for function calling. If the user’s prompt is not relevant to the database, it answers based on the foundation model’s training data (see screenshot prompt about Germany’s capital city)
+- I’ve populated a trial Databricks catalog with a small data warehouse called “ecommerce”
+- Generated some random dummy data INSERT INTO statements using DIAL GPT-5.1
+- Added Databricks AI-generated descriptions to the schema’s tables to make AI-generated SQL queries work smoother
+- Added the data warehouse to the chatbot app’s environment variables
+- Generated Python function code using DIAL GPT-5.1 and GitHub Copilot GPT-5.2 to see if the user’s prompt requires a SQL query and in case yes, to use a function call tool without prompting the LLM twice. Then the same LLM should incorporate query results in its generated answer (see below)
+- Free trial foundation models like meta-llama-3-1-8b-instruct seem limited in their ability to explain their reasoning. Prompting it to share the SQL query it employed didn’t actually succeed in incorporating the query code into its answers (see screenshots)
+- The chatbot demonstrates flexibility for function calling. If the user’s prompt is not relevant to the database, it answers based on the foundation model’s training data (see screenshot prompt about Germany’s capital city)
 
 
 # Screenshots

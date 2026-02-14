@@ -296,7 +296,7 @@ if not endpoint_supported:
 else:
     st.markdown(
         "This is a training final project for Epam Systems's Generative AI Foundations for Data Analytics Engineers course.\n\n" \
-        "Author: Geza Bankovics on January 13, 2026 using DIAL GPT-5.1, GitHub Copilot GPT-5.2 and this Databricks app template: https://github.com/databricks/app-templates/tree/main/streamlit-chatbot-app\n\n" \
+        "Author: Joachim Geza Bankovics on January 13, 2026 using DIAL GPT-5.1, GitHub Copilot GPT-5.2 and this Databricks app template: https://github.com/databricks/app-templates/tree/main/streamlit-chatbot-app\n\n" \
         "Technology used: Databricks SQL, Databricks Model Serving and Streamlit."
     )
 
