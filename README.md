@@ -5,7 +5,8 @@ Author: Joachim Geza Bankovics on January 13, 2026 using DIAL GPT-5.1, GitHub Co
 - Serving endpoint used: databricks-meta-llama-3-1-8b-instruct
 - Script (app.py):
 
-`    if prompt := st.chat_input("Ask a question about your data"):
+```python
+    if prompt := st.chat_input("Ask a question about your data"):
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
@@ -21,11 +22,13 @@ Author: Joachim Geza Bankovics on January 13, 2026 using DIAL GPT-5.1, GitHub Co
                 max_tool_rounds=3,
             )
             assistant_content = assistant_msg.get("content") or ""
-            st.markdown(assistant_content)`
+            st.markdown(assistant_content)
+```
 
 - Script (model_serving_utils.py):
 
-`def _query_endpoint(
+```python
+def _query_endpoint(
     endpoint_name: str,
     messages: list[dict[str, Any]],
     max_tokens: int,
@@ -140,7 +143,8 @@ def query_endpoint(
                 }
             )
 
-    raise Exception("Exceeded max_tool_rounds without reaching a final assistant response.")`
+    raise Exception("Exceeded max_tool_rounds without reaching a final assistant response.")
+```
 
 # Platform-Specific AI Integrations
 - I’ve populated a trial Databricks catalog with a small data warehouse called “ecommerce”
